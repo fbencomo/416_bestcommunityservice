@@ -43,7 +43,16 @@ myApp.config(function ($routeProvider) {
        templateUrl: 'pages/register.html',
        controller: 'registerController'
    })
+   .when('/userHome', {
+       templateUrl: 'pages/userHome.html',
+       controller: 'userHomeController'
+   })
+   .when('/eventSchedule', {
+       templateUrl: 'pages/eventSchedule.html',
+       controller: 'eventScheduleController'
+   })
 });
+
 
 myApp.controller('mainController', ['$scope', '$log', function ($scope, $log){
     
@@ -74,6 +83,14 @@ myApp.loginController('loginController', ['$scope', '$log', function ($scope, $l
 }]);
 
 myApp.registerController('registerController', ['$scope', '$log', function ($scope, $log){
+    
+}]);
+
+myApp.userHomeController('userHomeController', ['$scope', '$log', function ($scope, $log){
+    
+}]);
+
+myApp.eventScheduleController('eventScheduleController', ['$scope', '$log', function ($scope, $log){
     
 }]);
 
