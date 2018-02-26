@@ -51,6 +51,10 @@ myApp.config(function ($routeProvider) {
        templateUrl: 'pages/eventSchedule.html',
        controller: 'eventScheduleController'
    })
+   .when('/payment', {
+       templateUrl: 'pages/payment.html',
+       controller: 'paymentController'
+   })
 });
 
 
@@ -94,3 +98,71 @@ myApp.eventScheduleController('eventScheduleController', ['$scope', '$log', func
     
 }]);
 
+myApp.paymentController('paymentController', ['$scope', '$log', function ($scope, $log){
+    
+}]);
+
+function eventClicked() {
+    if(document.getElementById("eventPay").checked==true){
+        document.getElementById("donPay").disabled=true;
+    }
+    else{
+        document.getElementById("donPay").disabled=false;
+    }
+}
+
+function donClicked() {
+    if(document.getElementById("donPay").checked==true){
+        document.getElementById("eventPay").disabled=true;
+        document.getElementById("donationAmount").innerHTML="Donation Amount:<br>" +
+                                                            "<input type=\"text\">" +
+                                                            "<small> USD</small>";
+    }
+    else{
+        document.getElementById("eventPay").disabled=false;
+        document.getElementById("donationAmount").innerHTML="";
+    }
+}
+
+function debitClicked(){
+    document.getElementById("credit").checked=false;
+    document.getElementById("checking").checked=false;
+    document.getElementById("paymentField").innerHTML="Select Card Type:<br>" +
+                                                          "<select>" +
+                                                          "<option>Visa</option>" +
+                                                          "<option>Master Card</option>" +
+                                                          "<option>American Express</option>" +
+                                                          "</select><br>" +
+                                                          "Card Number:<br>" +
+                                                          "<input type=\"text\"><br>" +
+                                                          "Expiration Date:<br>" +
+                                                          "<input type=\"date\"><br>" +
+                                                          "CVC Code:<br>" +
+                                                          "<input type=\"text\"><br><br>";
+}
+
+function creditClicked(){
+    document.getElementById("debit").checked=false;
+    document.getElementById("checking").checked=false;
+    document.getElementById("paymentField").innerHTML="";
+    document.getElementById("paymentField").innerHTML="Select Card Type:<br>" +
+                                                          "<select>" +
+                                                          "<option>Visa</option>" +
+                                                          "<option>Master Card</option>" +
+                                                          "<option>American Express</option>" +
+                                                          "</select><br>" +
+                                                          "Card Number:<br>" +
+                                                          "<input type=\"text\"><br>" +
+                                                          "Expiration Date:<br>" +
+                                                          "<input type=\"date\"><br><br>";
+}
+
+function checkingClicked(){
+    document.getElementById("debit").checked=false;
+    document.getElementById("credit").checked=false;
+    document.getElementById("paymentField").innerHTML="";
+    document.getElementById("paymentField").innerHTML="Routing Number:<br>" +
+                                                      "<input type=\"text\"><br>" +
+                                                      "Account Number:<br>" +
+                                                      "<input type=\"text\"><br><br>";
+}

@@ -1,0 +1,52 @@
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>Make a Payment</h1>
+    </div>
+</div><!-- end jumbotron-->
+
+<div class="container">
+    <div class="container">
+        <div class="well well-lg row">
+            <div class="container">
+            <strong>Reason for Payment:</strong><br><br>
+                <form>
+                    <div>
+                        Event: <input type="checkbox" onclick="eventClicked()" name="eventPayment" id="eventPay">
+                    </div>
+                    <div>
+                        Donation: <input type="checkbox" onclick="donClicked()" name="donation" id="donPay">
+                        <p id="donationAmount">
+                        </p>
+                    </div>
+                </form>
+            </div>
+            <hr style="border:#000000 solid 1px;">
+            <div class="container">
+                <form>
+                    <strong>Billing Information</strong><br><br>
+                    First Name:<br><input type="text"><br>
+                    Last Name:<br><input type="text"><br><br>
+                    Address Line 1:<br><input type="text"><br>
+                    Address Line 2:<br><input type="text"><br>
+                    City:<br><input type="text"><br> State:<br><input type="text"><br>
+                    Zip Code:<br><input type="text">
+                    <hr style="border:#000000 solid 1px;">
+                    <div class="container">
+                        <strong>Payment Information</strong>
+                        <br><br>
+                        Payment Type:<br><br>
+                        Debit: <input type="radio" id="debit" onclick="debitClicked()"><br>
+                        Credit: <input type="radio" id="credit" onclick="creditClicked()"><br>
+                        Checking Account: <input type="radio" id="checking" onclick="checkingClicked()"><br><br>
+                    </div>
+                    <div id="paymentField">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Make Payment</button> 
+                    <a class="btn btn-primary" href="#/userHome">Cancel</a>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
